@@ -68,7 +68,7 @@ def write_to_csv(file_path: str,  rows: int):
 def add_id(file_name: str) -> None:
     df = pl.read_csv(file_name)
     uuid_list = [str(uuid.uuid4()) for _ in range(df.height)]
-    df.with_columns(pl.Series("unique_id", uuid_list))
+    df = df.with_columns(pl.Series("unique_id", uuid_list))
     df.write_csv(file_name)
     logging.info("Added UUID to the dataset")
 
