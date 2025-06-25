@@ -47,7 +47,7 @@ def generate_record(fake: Faker) -> list:
 
 
 def write_to_csv(file_path: str,  rows: int):
-    fake = create_data("ro_RO")
+    fake = create_data("es_MX")
 
     headers = [
         "person_name", "user_name", "email", "personal_number", "birth_date", "address",
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     output_file = f"chapter_2/work_2/data_2/batch_{date.today()}.csv"
 
-    if str(date.today()) == "2025-06-23":
+    if str(date.today()) == "2025-06-25":
         records = random.randint(100_372, 100_372)
         run_type = "first"
 
